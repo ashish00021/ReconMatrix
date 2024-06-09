@@ -21,6 +21,8 @@ ReconMatrix is a Python-based tool for performing reconnaissance on target domai
 
     ```bash
     pip install -r requirements.txt
+    or
+    pip3 install -r requirements.txt
     ```
 
     This command will install all the necessary Python packages specified in the `requirements.txt` file.
