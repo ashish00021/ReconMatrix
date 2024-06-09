@@ -14,7 +14,7 @@ ReconMatrix is a Python-based tool for performing reconnaissance on target domai
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your_username/repo_name.git
+    git clone https://github.com/ashish00021/ReconMatrix.git
     ```
 
 2. Install the required dependencies using pip and the provided requirements file:
@@ -28,10 +28,10 @@ ReconMatrix is a Python-based tool for performing reconnaissance on target domai
 ## Usage
 
 ```bash
-python recon_matrix.py --domain example.com [--whois] [--onlysub] [--nmap] [--direc]
+python reconmatrix.py --domain example.com [--whois] [--onlysub] [--nmap] [--direc]
 
 
 ## Usage
 
 ```bash
-python recon_matrix.py --domain example.com [--whois] [--onlysub] [--nmap] [--direc]
+python reconmatrix.py --domain example.com [--whois] [--onlysub] [--nmap] [--direc]
