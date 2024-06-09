@@ -107,7 +107,7 @@ parser = argparse.ArgumentParser(description="This is a subdomain finder which r
 parser.add_argument("--domain", required=True, help="Target domain")
 parser.add_argument("-w", "--whois", action="store_true", help="Use to find info about target")
 parser.add_argument("-s", "--onlysub", action="store_true", help="Use if you only need subdomains")
-parser.add_argument("-n", "--nmap", action="store_true", help="Use for Nmap scan")
+parser.add_argument("-n", "--portscan", action="store_true", help="Use for Nmap scan")
 parser.add_argument("-d", "--direc", action="store_true", help="For finding different directories")
 
 args = parser.parse_args()
@@ -146,16 +146,6 @@ with open("sub_list.txt", 'r') as f:
 with open("dir_wordlist.txt", 'r') as f:
     dir_wordlist = f.read().splitlines()
 
-# Function to perform nslookup and start Nmap scan if requested
-def nslookup(domain):
-    try:
-        ip_address = socket.gethostbyname(domain)
-        if args.nmap:
-            nmap_scan = NmapScan(ip_address)
-            nmap_scan.scan()
-            print(colored("[+] Starting Nmap Scan...", 'green'))
-    except socket.gaierror as e:
-        print(f"Failed to resolve domain: {e}")
 
 # Initialize classes with the target domain and lists
 subdomain_scanner = SubdomainScanner(Domain, sub_list)
@@ -164,14 +154,14 @@ dir_scanner = DirScan(Domain, dir_wordlist)
 nmap_Scan = NmapScan(Domain,ports)
 
 # Execute scans based on provided arguments
-if args.whois or args.onlysub or args.direc or args.nmap :
+if args.whois or args.onlysub or args.direc or args.portscan :
     if args.whois:
         whois_info.info()
     if args.onlysub:
         subdomain_scanner.scan()
     if args.direc:
         dir_scanner.find_dir()
-    if args.nmap:
+    if args.portscan:
         nmap_Scan.scan()
 else:
     print("="*30)
@@ -191,5 +181,4 @@ else:
     print("#"*30)
     nmap_Scan.scan()
 
-# Perform nslookup and Nmap scan if requested
-# nslookup(Domain)
+# 
