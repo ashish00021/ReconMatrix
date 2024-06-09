@@ -29,6 +29,7 @@ ReconMatrix is a Python-based tool for performing reconnaissance on target domai
 
 ```bash
 python reconmatrix.py --domain example.com [--whois] [--onlysub] [--nmap] [--direc]
+```
 
 
 ## Usage
