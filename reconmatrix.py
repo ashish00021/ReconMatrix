@@ -103,7 +103,7 @@ class DirScan:
 
 
 # Argument parser setup
-parser = argparse.ArgumentParser(description="This is a subdomain finder which returns the subdomains of a given domain.")
+parser = argparse.ArgumentParser(description="This is a recon tool which returns the recon information about  given domain.")
 parser.add_argument("--domain", required=True, help="Target domain")
 parser.add_argument("-w", "--whois", action="store_true", help="Use to find info about target")
 parser.add_argument("-s", "--onlysub", action="store_true", help="Use if you only need subdomains")
